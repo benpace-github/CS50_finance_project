@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+
+    <main class="container p-5">
+
+    <table class="table table-striped">
+
+        <thead>
+            <tr>
+                <th>Ticker</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Type</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        {% for i in history_list %}
+        <tr>
+            <td>{{ i.ticker }}</td>
+            <td>{{ i.shares }}</td>
+            <td>{{ i.price }}</td>
+            <td>{{ i.type }}</td>
+            <td>{{ i.date }}</td>
+            <td>{{ i.time }}</td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+        </main>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+
+    <main class="container p-5">
+
+    <table class="table table-striped">
+
+        <thead>
+            <tr>
+                <th>Ticker</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        {% for i in stock_list %}
+        <tr>
+            <td>{{ i.ticker }}</td>
+            <td>{{ i.shares }}</td>
+            <td>{{ i.price }}</td>
+            <td>{{ i.value }}</td>
+        </tr>
+        {% endfor %}
+
+            <tr>
+                <td colspan="1">Cash</td>
+                <td colspan="2"></td>
+                <td colspan="4">{{ user_cash }}</td>
+            </tr>
+
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="1">Total Value</td>
+                <td colspan="2"></td>
+                <td colspan="4">{{ total_value }}</td>
+            </tr>
+        </tfoot>
+
+    </table>
+
+        </main>
+
+{% endblock %}
